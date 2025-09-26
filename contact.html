@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Mindful Moments</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Mindful Moments</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="practice.html">Practice</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">☰</div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Reach Out</h2>
+    <form id="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" required />
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+      
+      <label for="message">Message (optional)</label>
+      <textarea id="message"></textarea>
+      
+      <button type="submit">Send</button>
+      <p id="form-status"></p>
+    </form>
+  </main>
+
+  <footer class="container">
+    <p>&copy; 2024 Mindful Moments. Breathe deeply.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      if (name && email) {
+        document.getElementById('form-status').textContent = 'Thank you! Your message is received with calm.';
+        document.getElementById('form-status').style.color = '#2e7d32';
+        this.reset();
+      }
+    });
+  </script>
+</body>
+</html>
